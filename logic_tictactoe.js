@@ -1,6 +1,4 @@
-window.addEventListener('load',function(){
-    p1
-});    
+   
 //shortcut to get elements from id  
 var el = function(element){
     return document.getElementById(element);
