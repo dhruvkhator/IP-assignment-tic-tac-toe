@@ -141,37 +141,6 @@ function winner(){
             reset();
         }
     
-   /* if(b1!=""&& b2!=""&& b3!=""&& b1==b2 && b2==b3){
-        if(b1 == "X"){
-            alert(p1+" Wins!!")
-        }
-        else if(b1 == "O"){
-            alert(p2+" Wins!!")
-        }
-    }*/
-   // reset();
-    
-/*    else if((b1 == b4)&&(b4 == b7)){
-        f = b1;
-    }
-    else if((b1 == b5)&&(b5 == b9)){
-        f = b1;
-    }
-    else if((b2 == b5)&&(b5 == b8)){
-        f = b2;
-    }
-    else if((b3 == b5)&&(b5 == b7)){
-        f = b3;
-    }
-    else if((b3 == b6)&&(b6 == b9)){
-        f = b3;
-    }
-    else if((b4 == b5)&&(b5 == b6)){
-        f = b4;
-    }
-    else if((b7 == b8)&&(b8 == b9)){
-        f = b7;
-    }*/
 
 };
 
