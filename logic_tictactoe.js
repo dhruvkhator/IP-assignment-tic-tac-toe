@@ -12,9 +12,10 @@ var check1 = el("check_1"),//check button for player 1
     new_game = el("new_game"),
    
     b=["","","","","","","","",""];
-    console.log(box);
+    //console.log(box);
   
 
+sessionStorage.setItem("win",0);
 
 function getbox(){
     return document.getElementById(b).innerText;
@@ -81,6 +82,7 @@ function check(x,y,z){
 };
 
 function winner(){
+    
     for(var i =0; i<=8;i++){
         b[i] = el(i).innerText;
     }
@@ -98,10 +100,12 @@ function winner(){
         if(check(i,i+1,i+2)){
             if(b[i]=="X"){
                 alert(p1 + " Wins!!");
+                sessionStorage.setItem("win",1);
                   
             }
             else if(b[i] == "O"){
-                alert(p2+" Wins!!")
+                alert(p2+" Wins!!");
+                sessionStorage.setItem("win",1);
             }
             reset();
         }
@@ -110,9 +114,11 @@ function winner(){
         if(check(i,i+3,i+6)){
             if(b[i]=="X"){
                 alert(p1+" Wins!!");  
+                sessionStorage.setItem("win",1);
             }
             else if(b[i] == "O"){
-                alert(p2+" Wins!!")
+                alert(p2+" Wins!!");
+                sessionStorage.setItem("win",1);
             }
             reset();
         }
@@ -121,9 +127,11 @@ function winner(){
         if(check(0,4,8)){
             if(b[0]=="X"){
                 alert(p1+" Wins!!");  
+                sessionStorage.setItem("win",1);
             }
             else if(b[0] == "O"){
-                alert(p2+" Wins!!")
+                alert(p2+" Wins!!");
+                sessionStorage.setItem("win",1);
             }
             reset();
         }
@@ -132,18 +140,21 @@ function winner(){
         if(check(2,4,6)){
             if(b[2]=="X"){
                 alert(p1+" Wins!!");  
+                sessionStorage.setItem("win",1);
             }
             else if(b[2] == "O"){
-                alert(p2+" Wins!!")
+                alert(p2+" Wins!!");
+                sessionStorage.setItem("win",1);
             }
             reset();
         }
-    
+
 
 };
 
 function check_board(num){
-    if(num>9)
+    let win = sessionStorage.getItem("win");
+    if(num>9 && win!=1)
     {
         alert("Its a DRAW!!");
         reset();
@@ -174,10 +185,11 @@ for(var i =0; i<box.length ; i++){
         else if(check_empty(d) == "no"){
             alert("The box is already clicked!!");
         }
-        setTimeout(check_board,300,flag);
+        
         if(flag>5){
             setTimeout(winner,300);
         }
+        setTimeout(check_board,300,flag);
     });
     
 };
